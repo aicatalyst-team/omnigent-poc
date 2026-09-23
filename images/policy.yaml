@@ -1,0 +1,148 @@
+version: 1
+
+# --- Sandbox setup configuration (queried once at startup) ---
+
+filesystem_policy:
+  include_workdir: true
+  read_only:
+    - /usr
+    - /lib
+    - /lib64
+    - /proc
+    - /dev/urandom
+    - /etc
+    - /var/log
+  read_write:
+    - /sandbox
+    - /tmp
+    - /dev/null
+    - /dev/pts
+
+landlock:
+  compatibility: best_effort
+
+process:
+  run_as_user: sandbox
+  run_as_group: sandbox
+
+# --- Network policies (queried per-CONNECT request) ---
+
+network_policies:
+  claude_code:
+    name: claude-code
+    endpoints:
+      - { host: api.anthropic.com, port: 443, protocol: rest, enforcement: enforce, access: full, tls: terminate }
+      - { host: statsig.anthropic.com, port: 443 }
+      - { host: sentry.io, port: 443 }
+      - { host: raw.githubusercontent.com, port: 443 }
+      - { host: platform.claude.com, port: 443 }
+    binaries:
+      - { path: /usr/local/bin/claude }
+      - { path: /usr/local/bin/node }
+
+  codex:
+    name: codex
+    endpoints:
+      - { host: api.openai.com, port: 443 }
+      - { host: auth.openai.com, port: 443 }
+      - { host: chatgpt.com, port: 443 }
+      - { host: codeload.github.com, port: 443 }
+      - { host: files.openai.com, port: 443 }
+    binaries:
+      - { path: /usr/local/bin/codex }
+      - { path: /usr/local/bin/node }
+      - { path: "/usr/local/lib/node_modules/@openai/**" }
+      - { path: /usr/local/lib/node_modules/opencode-ai/bin/opencode.exe }
+
+  antigravity:
+    name: antigravity
+    endpoints:
+      - { host: generativelanguage.googleapis.com, port: 443 }
+      - { host: aistudio.google.com, port: 443 }
+      - { host: oauth2.googleapis.com, port: 443 }
+    binaries:
+      - { path: /usr/local/bin/agy }
+      - { path: /usr/local/bin/node }
+
+  opencode:
+    name: opencode
+    endpoints:
+      - { host: registry.npmjs.org, port: 443, protocol: rest, access: read-only, allow_encoded_slash: true }
+      - { host: opencode.ai, port: 443 }
+      - { host: models.opencode.ai, port: 443 }
+      - { host: litemaas-litellm.litemaas.svc.cluster.local, port: 4000, protocol: rest, access: full }
+    binaries:
+      - { path: /usr/local/lib/node_modules/opencode-ai/bin/.opencode }
+      - { path: /usr/local/lib/node_modules/opencode-ai/bin/opencode.exe }
+      - { path: /usr/local/bin/node }
+      - { path: /usr/local/bin/opencode }
+      - { path: /usr/bin/curl }
+
+  github_ssh_over_https:
+    name: github-ssh-over-https
+    endpoints:
+      - host: github.com
+        port: 443
+        protocol: rest
+        tls: terminate
+        enforcement: enforce
+        rules:
+          - allow:
+              method: GET
+              path: "/**/info/refs*"
+          - allow:
+              method: POST
+              path: "/**/git-upload-pack"
+    binaries:
+      - { path: /usr/bin/git }
+
+  github_rest_api:
+    name: github-rest-api
+    endpoints:
+      - host: api.github.com
+        port: 443
+        protocol: rest
+        tls: terminate
+        enforcement: enforce
+        access: read-only
+    binaries:
+      - { path: /usr/local/bin/claude }
+      - { path: /usr/local/bin/gh }
+
+  github_graphql:
+    name: github-graphql
+    endpoints:
+      - host: api.github.com
+        port: 443
+        path: /graphql
+        protocol: graphql
+        enforcement: enforce
+        access: read-only
+    binaries:
+      - { path: /usr/bin/gh }
+      - { path: /usr/local/bin/gh }
+
+  omnigent_server:
+    name: omnigent-server
+    endpoints:
+      - { host: "omnigent.omnigent.svc.cluster.local", port: 80 }
+      - { host: "*.svc.cluster.local", port: 80 }
+    binaries:
+      - { path: /sandbox/.venv/bin/python }
+      - { path: /sandbox/.venv/bin/python3 }
+      - { path: /sandbox/.venv/bin/omnigent }
+      - { path: /usr/bin/curl }
+
+  pypi:
+    name: pypi
+    endpoints:
+      - { host: pypi.org, port: 443 }
+      - { host: files.pythonhosted.org, port: 443 }
+      - { host: github.com, port: 443, protocol: rest, access: read-only, allow_encoded_slash: true }
+      - { host: objects.githubusercontent.com, port: 443 }
+      - { host: api.github.com, port: 443 }
+      - { host: downloads.python.org, port: 443 }
+    binaries:
+      - { path: /sandbox/.venv/bin/python }
+      - { path: /sandbox/.venv/bin/python3 }
+      - { path: /sandbox/.venv/bin/pip }

@@ -1,0 +1,5 @@
+Omnigent can integrate to an OIDC provider like keycloak, and sessions can be shared.
+
+I'm going to share this session with Alice and Bob.
+
+Here in a private window, I'm going to login as Alice and I should be able to see that session and add to it.

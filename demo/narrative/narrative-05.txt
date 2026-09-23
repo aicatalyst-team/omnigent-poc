@@ -1,0 +1,5 @@
+So let's look at the details here. We can open a shell in to the sandbox if we want or use the openshell connect command.
+
+Openshell ensures all network calls and file access are tightly controlled. All web requests are sent through a proxy.
+
+We have to be careful when closing this session though that we don't shut the sandbox down. We use Control P followed by Control Q to detach.

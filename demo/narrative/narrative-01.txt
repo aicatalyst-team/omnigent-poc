@@ -1,0 +1,13 @@
+In this demo we want to introduce an exciting new open source project called onmi gent.
+
+It can be described as a meta-harness for AI agents. It originated from Databricks but has a growing community now, including many contributions from Red Hat.
+
+It acts as a common layer over Claude Code, Codex, Pi, and the agents you write yourself, avoiding the vendor lock-in of the harnesses from the big labs.
+
+You can swap or combine harnesses without rewriting, keep them in check with policies and sandboxing, and collaborate in real time on the same live session, from any device.
+
+You might think - I can do all of that with OpenCode already. What's new here? 
+
+The difference is that Omni Gent runs the actual harness in the background, so you still get access to all of its functionality and streams the input and output to a common front end.
+
+But there's even more to it when we start using Omni Gent it in server mode. This allows us to share agent sessiions with others in a team.

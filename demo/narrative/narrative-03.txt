@@ -1,0 +1,7 @@
+To get started we take an OpenShift installation that has OpenShell installed.
+
+In this case we've gone one step further and enabled Kata containers too. Running OpenShell on Kata Containers gives another layer of defence in depth to the secure execution of agent harnesses.
+
+Alongside this we've installed Omnigent server, which will spawn runners as OpenShell sandboxes as needed.
+
+We're using this UBI 10 based image, which has the agent harnesess installed and the Omni Gent client, and has the OpenShell policy baked in.

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "litemaas/gemma-4",
+  "provider": {
+    "litemaas": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "LiteMaaS",
+      "options": {
+        "baseURL": "http://litemaas-litellm.litemaas.svc.cluster.local:4000/v1",
+        "apiKey": "{env:SELF_HOSTED_API_KEY}"
+      },
+      "models": {
+        "gemma-4": {
+          "name": "RedHatAI Gemma 4 31B IT FP8 block"
+        },
+        "gpt-oss-20b": {
+          "name": "RedHatAI GPT OSS 20B"
+        },
+        "granite-31-8b-lab-v1": {
+          "name": "Granite 3.1 8B lab v1"
+        },
+        "granite-40-h-small": {
+          "name": "RedHatAI Granite 4.0 h small"
+        }
+      }
+    }
+  }
+}

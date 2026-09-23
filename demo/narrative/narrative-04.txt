@@ -1,0 +1,9 @@
+On the web page then we can login and start a conversation about anything in general.
+
+We choose which agent harness to use - I have configured OpenAI and Gemini api keys, so I can use either Codex or AntiGravity or OpenCode here.
+
+The conversation kicks off a sandbox instance and it creates a web socket back to this Omni Gent server.
+
+The server is not an agent in itself - it's more of an orchestration layer persisting conversations and sahring them between users.
+
+The common front end helps avoid vendor lock in to the quirks of any particular agent harness.

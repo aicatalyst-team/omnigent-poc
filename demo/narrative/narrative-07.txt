@@ -1,0 +1,9 @@
+Alice is going to start her own session investigating a PR on the omnigent repo.
+
+She adds the repo and the branch and chooses a harness and asks an initial question.
+
+The container clones the repo and checks out the branch as a worktree.
+
+We supplied a Personal Access Token in our config, so it's able to use the GH command to interact with GitHub.
+
+In the browser side panel we can see the folder structure with the repo clone, the changes, the Github status, and the harness in use. 
