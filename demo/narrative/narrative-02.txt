@@ -1,5 +1,5 @@
 In this demo we dive in to this server mode and see how it can fit in to Red Hat OpenShift AI's policy of Bring Your Own Agents on top of Nvidia OpenShell.
 
-OpenShell will be part of Roy from release 3.6 onwards as its secure sandbox solution.
+OpenShell will be part of Red Hat AI from release 3.6 onwards as its secure sandbox solution.
 
-We'll show how this Omni Gent server mode allows collaboration and the potential it shows for aligning with AI Factory type SDLC rather than the siloed co-pilot sessions that standalone harnesses give.
+We'll show how this Omni Gent server mode allows collaboration between teams and how it can give a new way of working with agents.

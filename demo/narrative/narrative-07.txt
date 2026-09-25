@@ -1,9 +1,7 @@
-Alice is going to start her own session investigating a PR on the omnigent repo.
+Omni Gent also allows us to open a shell in to the sandbox.
 
-She adds the repo and the branch and chooses a harness and asks an initial question.
+I can check I'm authenticated to Git Hub, since I passed in a token as an environment variable.
 
-The container clones the repo and checks out the branch as a worktree.
+You can see here it's an Openshell environment based on UBI 10.
 
-We supplied a Personal Access Token in our config, so it's able to use the GH command to interact with GitHub.
-
-In the browser side panel we can see the folder structure with the repo clone, the changes, the Github status, and the harness in use. 
+All the usual shell command work, including control D to close it.

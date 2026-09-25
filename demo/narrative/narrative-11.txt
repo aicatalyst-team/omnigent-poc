@@ -1,0 +1,9 @@
+Omni Gent has lots of new features being added all the time.
+
+The take aways are it provides a very capable layer over a multitude of proprietary Agent harnesses that can make it easier to switch between them.
+
+The collaborative features enable a whole new way of working that fit somewhere between the individual pair programming approach and the totally hands off Software Factory approach.
+
+Thanks for watching and I hope you're encouraged to try out Omni Gent for your self soon, either in server mode like this or locally for personal use.
+
+Stay tuned for more demoes in this area.

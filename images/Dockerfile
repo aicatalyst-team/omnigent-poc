@@ -164,6 +164,10 @@ RUN printf 'export PATH="/sandbox/.venv/bin:/usr/local/bin:/usr/bin:/bin"\nexpor
       > /sandbox/.bashrc \
  && printf '[ -f ~/.bashrc ] && . ~/.bashrc\n' > /sandbox/.profile
 
+# Codex defaults.
+RUN mkdir -p /sandbox/.codex \
+  && printf 'model = "gpt-6-luna"\nmodel_reasoning_effort = "medium"\n' > /sandbox/.codex/config.toml
+
 # OpenShell sandbox policy.
 COPY images/policy.yaml /etc/openshell/policy.yaml
 

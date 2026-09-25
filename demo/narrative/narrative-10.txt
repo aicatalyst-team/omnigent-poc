@@ -1,0 +1,3 @@
+Returning once more to our Codex session, we can see that Bob's prompt has been completed, and it resulted in an update to the read-me.
+
+Over in bob's session the update is shown in exactly the same way.

@@ -46,6 +46,7 @@ network_policies:
       - { host: api.openai.com, port: 443 }
       - { host: auth.openai.com, port: 443 }
       - { host: chatgpt.com, port: 443 }
+      - { host: ab.chatgpt.com, port: 443 }
       - { host: codeload.github.com, port: 443 }
       - { host: files.openai.com, port: 443 }
     binaries:
@@ -60,6 +61,8 @@ network_policies:
       - { host: generativelanguage.googleapis.com, port: 443 }
       - { host: aistudio.google.com, port: 443 }
       - { host: oauth2.googleapis.com, port: 443 }
+      - { host: play.googleapis.com, port: 443 }
+      - { host: antigravity-unleash.goog, port: 443 }
     binaries:
       - { path: /usr/local/bin/agy }
       - { path: /usr/local/bin/node }
