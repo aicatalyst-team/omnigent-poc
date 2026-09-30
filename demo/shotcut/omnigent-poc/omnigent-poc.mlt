@@ -1070,9 +1070,9 @@
     <entry producer="chain10" in="00:04:05.672" out="00:04:12.471"/>
     <blank length="00:00:05.589"/>
     <entry producer="chain21" in="00:04:28.654" out="00:04:48.757"/>
-    <blank length="00:00:04.963"/>
+    <blank length="00:00:04.922"/>
     <entry producer="chain11" in="00:05:13.347" out="00:05:24.566"/>
-    <blank length="00:00:03.629"/>
+    <blank length="00:00:03.670"/>
     <entry producer="chain12" in="00:06:56.848" out="00:07:27.778"/>
     <blank length="00:00:05.714"/>
     <entry producer="chain13" in="00:07:45.045" out="00:07:57.266"/>
@@ -1905,11 +1905,11 @@
     <blank length="00:00:18.352"/>
     <entry producer="producer2" in="00:00:00.000" out="00:00:24.858"/>
   </playlist>
-  <chain id="chain30" out="00:00:50.592">
-    <property name="length">00:00:50.634</property>
+  <chain id="chain30" out="00:00:50.425">
+    <property name="length">1210</property>
     <property name="eof">pause</property>
     <property name="resource">/home/scondon/git/aicatalyst-team/omnigent-poc/demo/narrative/narrative-01.wav</property>
-    <property name="mlt_service">avformat-novalidate</property>
+    <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
     <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -1922,12 +1922,11 @@
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
     <property name="video_index">-1</property>
-    <property name="creation_time">2026-09-24T08:30:55</property>
     <property name="astream">0</property>
-    <property name="shotcut:skipConvert">1</property>
-    <property name="shotcut:hash">23ca28bdf67aab07fef31e1614a5adb3</property>
-    <property name="shotcut:caption">narrative-01.wav</property>
+    <property name="video_delay">0</property>
     <property name="xml">was here</property>
+    <property name="shotcut:hash">e1aafb40c5784a5cbb02651385c2a262</property>
+    <property name="shotcut:caption">narrative-01.wav</property>
   </chain>
   <chain id="chain31" out="00:00:35.077">
     <property name="length">842</property>
@@ -1975,16 +1974,41 @@
     <property name="shotcut:hash">981176a4d6b40c0aeb2feb11004d35d0</property>
     <property name="shotcut:caption">narrative-07.wav</property>
   </chain>
+  <chain id="chain33" out="00:00:15.766">
+    <property name="length">379</property>
+    <property name="eof">pause</property>
+    <property name="resource">/home/scondon/git/aicatalyst-team/omnigent-poc/demo/narrative/narrative-07.wav</property>
+    <property name="mlt_service">avformat</property>
+    <property name="meta.media.nb_streams">1</property>
+    <property name="meta.media.0.stream.type">audio</property>
+    <property name="meta.media.0.codec.sample_fmt">s16</property>
+    <property name="meta.media.0.codec.sample_rate">24000</property>
+    <property name="meta.media.0.codec.channels">2</property>
+    <property name="meta.media.0.codec.layout">independent</property>
+    <property name="meta.media.0.codec.name">pcm_s16le</property>
+    <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+    <property name="meta.media.0.codec.bit_rate">768000</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="astream">0</property>
+    <property name="video_delay">0</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">981176a4d6b40c0aeb2feb11004d35d0</property>
+    <property name="shotcut:caption">narrative-07.wav</property>
+  </chain>
   <playlist id="playlist2">
     <property name="shotcut:audio">1</property>
     <property name="shotcut:name">A1</property>
-    <entry producer="chain30" in="00:00:00.000" out="00:00:50.592"/>
-    <blank length="00:00:25.609"/>
+    <entry producer="chain30" in="00:00:00.000" out="00:00:50.425"/>
+    <blank length="00:00:25.776"/>
     <entry producer="chain31" in="00:00:00.000" out="00:00:35.077"/>
     <blank length="00:01:31.657"/>
-    <entry producer="chain32" in="00:00:00.000" out="00:00:15.766"/>
+    <entry producer="chain32" in="00:00:00.000" out="00:00:08.342"/>
+    <blank length="00:00:12.721"/>
+    <entry producer="chain33" in="00:00:08.383" out="00:00:15.766"/>
   </playlist>
-  <chain id="chain33" out="00:00:22.564">
+  <chain id="chain34" out="00:00:22.564">
     <property name="length">542</property>
     <property name="eof">pause</property>
     <property name="resource">/home/scondon/git/aicatalyst-team/omnigent-poc/demo/narrative/narrative-02.wav</property>
@@ -2006,29 +2030,6 @@
     <property name="xml">was here</property>
     <property name="shotcut:hash">f4d6f441d14998a82430aa16ef40bb40</property>
     <property name="shotcut:caption">narrative-02.wav</property>
-  </chain>
-  <chain id="chain34" out="00:00:15.349">
-    <property name="length">369</property>
-    <property name="eof">pause</property>
-    <property name="resource">/home/scondon/git/aicatalyst-team/omnigent-poc/demo/narrative/narrative-05.wav</property>
-    <property name="mlt_service">avformat</property>
-    <property name="meta.media.nb_streams">1</property>
-    <property name="meta.media.0.stream.type">audio</property>
-    <property name="meta.media.0.codec.sample_fmt">s16</property>
-    <property name="meta.media.0.codec.sample_rate">24000</property>
-    <property name="meta.media.0.codec.channels">2</property>
-    <property name="meta.media.0.codec.layout">independent</property>
-    <property name="meta.media.0.codec.name">pcm_s16le</property>
-    <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
-    <property name="meta.media.0.codec.bit_rate">768000</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">0</property>
-    <property name="video_index">-1</property>
-    <property name="astream">0</property>
-    <property name="video_delay">0</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">fa4976ca9bdd93d144530a82279e05c3</property>
-    <property name="shotcut:caption">narrative-05.wav</property>
   </chain>
   <chain id="chain35" out="00:00:15.349">
     <property name="length">369</property>
@@ -2053,10 +2054,10 @@
     <property name="shotcut:hash">fa4976ca9bdd93d144530a82279e05c3</property>
     <property name="shotcut:caption">narrative-05.wav</property>
   </chain>
-  <chain id="chain36" out="00:00:21.188">
-    <property name="length">509</property>
+  <chain id="chain36" out="00:00:15.349">
+    <property name="length">369</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/scondon/git/aicatalyst-team/omnigent-poc/demo/narrative/narrative-06.wav</property>
+    <property name="resource">/home/scondon/git/aicatalyst-team/omnigent-poc/demo/narrative/narrative-05.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -2073,8 +2074,8 @@
     <property name="astream">0</property>
     <property name="video_delay">0</property>
     <property name="xml">was here</property>
-    <property name="shotcut:hash">d048fd400ad4f85fc4b65c9416ab84ab</property>
-    <property name="shotcut:caption">narrative-06.wav</property>
+    <property name="shotcut:hash">fa4976ca9bdd93d144530a82279e05c3</property>
+    <property name="shotcut:caption">narrative-05.wav</property>
   </chain>
   <chain id="chain37" out="00:00:21.188">
     <property name="length">509</property>
@@ -2099,7 +2100,30 @@
     <property name="shotcut:hash">d048fd400ad4f85fc4b65c9416ab84ab</property>
     <property name="shotcut:caption">narrative-06.wav</property>
   </chain>
-  <chain id="chain38" out="00:00:05.130">
+  <chain id="chain38" out="00:00:21.188">
+    <property name="length">509</property>
+    <property name="eof">pause</property>
+    <property name="resource">/home/scondon/git/aicatalyst-team/omnigent-poc/demo/narrative/narrative-06.wav</property>
+    <property name="mlt_service">avformat</property>
+    <property name="meta.media.nb_streams">1</property>
+    <property name="meta.media.0.stream.type">audio</property>
+    <property name="meta.media.0.codec.sample_fmt">s16</property>
+    <property name="meta.media.0.codec.sample_rate">24000</property>
+    <property name="meta.media.0.codec.channels">2</property>
+    <property name="meta.media.0.codec.layout">independent</property>
+    <property name="meta.media.0.codec.name">pcm_s16le</property>
+    <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+    <property name="meta.media.0.codec.bit_rate">768000</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="astream">0</property>
+    <property name="video_delay">0</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">d048fd400ad4f85fc4b65c9416ab84ab</property>
+    <property name="shotcut:caption">narrative-06.wav</property>
+  </chain>
+  <chain id="chain39" out="00:00:05.130">
     <property name="length">124</property>
     <property name="eof">pause</property>
     <property name="resource">/home/scondon/git/aicatalyst-team/omnigent-poc/demo/narrative/narrative-07a.wav</property>
@@ -2122,11 +2146,11 @@
     <property name="shotcut:hash">46d33b4b335a0b315d6dc6fc203b8fdd</property>
     <property name="shotcut:caption">narrative-07a.wav</property>
   </chain>
-  <chain id="chain39" out="00:00:20.229">
-    <property name="length">00:00:20.270</property>
+  <chain id="chain40" out="00:00:20.646">
+    <property name="length">496</property>
     <property name="eof">pause</property>
     <property name="resource">/home/scondon/git/aicatalyst-team/omnigent-poc/demo/narrative/narrative-08a.wav</property>
-    <property name="mlt_service">avformat-novalidate</property>
+    <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
     <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -2139,36 +2163,11 @@
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
     <property name="video_index">-1</property>
-    <property name="creation_time">2026-09-25T12:20:44</property>
     <property name="astream">0</property>
-    <property name="shotcut:skipConvert">1</property>
-    <property name="shotcut:hash">374d39e1ce85fad9ca6cef98461142a7</property>
-    <property name="shotcut:caption">narrative-08a.wav</property>
+    <property name="video_delay">0</property>
     <property name="xml">was here</property>
-  </chain>
-  <chain id="chain40" out="00:00:20.229">
-    <property name="length">00:00:20.270</property>
-    <property name="eof">pause</property>
-    <property name="resource">/home/scondon/git/aicatalyst-team/omnigent-poc/demo/narrative/narrative-08a.wav</property>
-    <property name="mlt_service">avformat-novalidate</property>
-    <property name="meta.media.nb_streams">1</property>
-    <property name="meta.media.0.stream.type">audio</property>
-    <property name="meta.media.0.codec.sample_fmt">s16</property>
-    <property name="meta.media.0.codec.sample_rate">24000</property>
-    <property name="meta.media.0.codec.channels">2</property>
-    <property name="meta.media.0.codec.layout">independent</property>
-    <property name="meta.media.0.codec.name">pcm_s16le</property>
-    <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
-    <property name="meta.media.0.codec.bit_rate">768000</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">0</property>
-    <property name="video_index">-1</property>
-    <property name="creation_time">2026-09-25T12:20:44</property>
-    <property name="astream">0</property>
-    <property name="shotcut:skipConvert">1</property>
-    <property name="shotcut:hash">374d39e1ce85fad9ca6cef98461142a7</property>
+    <property name="shotcut:hash">a071596087d3b31434818e45de8590c2</property>
     <property name="shotcut:caption">narrative-08a.wav</property>
-    <property name="xml">was here</property>
   </chain>
   <chain id="chain41" out="00:00:20.229">
     <property name="length">00:00:20.270</property>
@@ -2242,7 +2241,31 @@
     <property name="shotcut:caption">narrative-08a.wav</property>
     <property name="xml">was here</property>
   </chain>
-  <chain id="chain44" out="00:00:10.761">
+  <chain id="chain44" out="00:00:20.229">
+    <property name="length">00:00:20.270</property>
+    <property name="eof">pause</property>
+    <property name="resource">/home/scondon/git/aicatalyst-team/omnigent-poc/demo/narrative/narrative-08a.wav</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="meta.media.nb_streams">1</property>
+    <property name="meta.media.0.stream.type">audio</property>
+    <property name="meta.media.0.codec.sample_fmt">s16</property>
+    <property name="meta.media.0.codec.sample_rate">24000</property>
+    <property name="meta.media.0.codec.channels">2</property>
+    <property name="meta.media.0.codec.layout">independent</property>
+    <property name="meta.media.0.codec.name">pcm_s16le</property>
+    <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+    <property name="meta.media.0.codec.bit_rate">768000</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="creation_time">2026-09-25T12:20:44</property>
+    <property name="astream">0</property>
+    <property name="shotcut:skipConvert">1</property>
+    <property name="shotcut:hash">374d39e1ce85fad9ca6cef98461142a7</property>
+    <property name="shotcut:caption">narrative-08a.wav</property>
+    <property name="xml">was here</property>
+  </chain>
+  <chain id="chain45" out="00:00:10.761">
     <property name="length">259</property>
     <property name="eof">pause</property>
     <property name="resource">/home/scondon/git/aicatalyst-team/omnigent-poc/demo/narrative/narrative-10.wav</property>
@@ -2265,7 +2288,7 @@
     <property name="shotcut:hash">f64a771c6698c95d7c026db492761c8f</property>
     <property name="shotcut:caption">narrative-10.wav</property>
   </chain>
-  <chain id="chain45" out="00:00:30.864">
+  <chain id="chain46" out="00:00:30.864">
     <property name="length">741</property>
     <property name="eof">pause</property>
     <property name="resource">/home/scondon/git/aicatalyst-team/omnigent-poc/demo/narrative/narrative-11.wav</property>
@@ -2292,33 +2315,33 @@
     <property name="shotcut:audio">1</property>
     <property name="shotcut:name">A2</property>
     <blank length="00:00:52.761"/>
-    <entry producer="chain33" in="00:00:00.000" out="00:00:22.564"/>
+    <entry producer="chain34" in="00:00:00.000" out="00:00:22.564"/>
     <blank length="00:00:44.795"/>
-    <entry producer="chain34" in="00:00:00.000" out="00:00:05.422"/>
+    <entry producer="chain35" in="00:00:00.000" out="00:00:05.422"/>
     <blank length="00:00:07.424"/>
-    <entry producer="chain35" in="00:00:05.464" out="00:00:15.098"/>
+    <entry producer="chain36" in="00:00:05.464" out="00:00:15.098"/>
     <blank length="00:00:21.396"/>
-    <entry producer="chain36" in="00:00:00.000" out="00:00:16.558"/>
+    <entry producer="chain37" in="00:00:00.000" out="00:00:16.558"/>
     <blank length="00:00:03.545"/>
-    <entry producer="chain37" in="00:00:16.600" out="00:00:21.188"/>
+    <entry producer="chain38" in="00:00:16.600" out="00:00:21.188"/>
     <blank length="00:00:46.171"/>
-    <entry producer="chain38" in="00:00:00.000" out="00:00:05.130"/>
+    <entry producer="chain39" in="00:00:00.000" out="00:00:05.130"/>
     <blank length="00:00:19.353"/>
-    <entry producer="chain39" in="00:00:00.000" out="00:00:05.589"/>
+    <entry producer="chain40" in="00:00:00.000" out="00:00:05.589"/>
     <blank length="00:00:15.641"/>
-    <entry producer="chain40" in="00:00:05.631" out="00:00:08.300"/>
+    <entry producer="chain41" in="00:00:05.631" out="00:00:08.300"/>
     <blank length="00:00:12.054"/>
-    <entry producer="chain41" in="00:00:08.342" out="00:00:11.303"/>
+    <entry producer="chain42" in="00:00:08.342" out="00:00:11.303"/>
     <blank length="00:00:05.589"/>
-    <entry producer="chain42" in="00:00:11.345" out="00:00:14.806"/>
+    <entry producer="chain43" in="00:00:11.345" out="00:00:14.806"/>
     <blank length="00:00:07.007"/>
-    <entry producer="chain43" in="00:00:14.848" out="00:00:20.229"/>
+    <entry producer="chain44" in="00:00:14.848" out="00:00:20.229"/>
     <blank length="00:00:24.316"/>
-    <entry producer="chain44" in="00:00:00.000" out="00:00:10.761"/>
+    <entry producer="chain45" in="00:00:00.000" out="00:00:10.761"/>
     <blank length="00:00:08.091"/>
-    <entry producer="chain45" in="00:00:00.000" out="00:00:30.864"/>
+    <entry producer="chain46" in="00:00:00.000" out="00:00:30.864"/>
   </playlist>
-  <chain id="chain46" out="00:00:10.969">
+  <chain id="chain47" out="00:00:10.969">
     <property name="length">264</property>
     <property name="eof">pause</property>
     <property name="resource">/home/scondon/git/aicatalyst-team/omnigent-poc/demo/narrative/narrative-08.wav</property>
@@ -2341,7 +2364,7 @@
     <property name="shotcut:hash">cad90d606a4a6f705baa35ad2ba3c084</property>
     <property name="shotcut:caption">narrative-08.wav</property>
   </chain>
-  <chain id="chain47" out="00:00:19.603">
+  <chain id="chain48" out="00:00:19.603">
     <property name="length">471</property>
     <property name="eof">pause</property>
     <property name="resource">/home/scondon/git/aicatalyst-team/omnigent-poc/demo/narrative/narrative-09.wav</property>
@@ -2368,9 +2391,9 @@
     <property name="shotcut:audio">1</property>
     <property name="shotcut:name">A3</property>
     <blank length="00:04:03.128"/>
-    <entry producer="chain46" in="00:00:00.000" out="00:00:10.969"/>
+    <entry producer="chain47" in="00:00:00.000" out="00:00:10.969"/>
     <blank length="00:01:07.674"/>
-    <entry producer="chain47" in="00:00:00.000" out="00:00:19.603"/>
+    <entry producer="chain48" in="00:00:00.000" out="00:00:19.603"/>
   </playlist>
   <producer id="producer3" in="00:00:00.000" out="03:59:59.977">
     <property name="length">04:00:00.042</property>
@@ -2477,7 +2500,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <tractor id="tractor0" title="Shotcut version 26.8.1" in="00:00:00.000" out="00:06:34.243">
     <property name="shotcut:colorTransfer">sdr</property>
     <property name="shotcut">1</property>
-    <property name="shotcut:scaleFactor">0.833975</property>
+    <property name="shotcut:scaleFactor">2.27099</property>
     <property name="shotcut:projectAudioChannels">2</property>
     <property name="shotcut:projectFolder">1</property>
     <property name="shotcut:processingMode">Native8Cpu</property>

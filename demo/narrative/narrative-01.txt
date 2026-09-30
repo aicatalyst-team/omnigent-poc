@@ -10,4 +10,4 @@ You might think - I can do all of that with OpenCode already. What's new here?
 
 The difference is that Omni Gent runs the actual harness in the background, so you still get access to all of its functionality and special commands.
 
-But there's even more to it when we start using Omni Gent it in server mode. This allows us to share agent sessiions with others in a team.
+But there's even more to it when we start using Omni Gent it in server mode. This allows us to share agent sessions with others in a team.

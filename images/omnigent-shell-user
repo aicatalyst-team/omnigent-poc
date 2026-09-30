@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+. /usr/local/bin/omnigent-user-identity.sh
+exec "$@"
