@@ -8,18 +8,22 @@
 #
 # Agent CLIs: Claude Code, Codex, OpenCode, Antigravity (agy), gh.
 #
-# Build (from repo root):
+# Build from this POC repo, supplying the Omnigent fork checkout:
 #
-#   docker build -t omnigent-host-openshell:ubi10 \
-#                -f images/Dockerfile .
+#   docker build --build-context omnigent-source=../omnigent-oshell-prov -t omnigent-host-openshell:ubi10 -f images/Dockerfile .
+#
+# The named context is required: a build without it fails instead of
+# silently installing an unrelated nightly Omnigent source tree.
 
 # ── Source stage ────────────────────────────────────────
-# Pull /build (omnigent source tree) from the nightly host image.
-# We don't use its /opt/venv because the base image's Python lives at
-# /usr/local/bin/python3.12, which doesn't exist in UBI 10 (Python is
-# at /usr/bin/python3). Instead we create a fresh venv in the final
-# stage and pip-install from /build.
-FROM ghcr.io/omnigent-ai/omnigent-host:latest-nightly AS omnigent-src
+# Select the same package files copied by the Omnigent host image builder.
+# UBI 10 uses /usr/bin/python3, so the final stage installs these sources
+# into its own venv instead of copying another image Python environment.
+FROM scratch AS omnigent-src
+COPY --from=omnigent-source /pyproject.toml /setup.py /LICENSE /NOTICE /build/
+COPY --from=omnigent-source /sdks /build/sdks
+COPY --from=omnigent-source /omnigent /build/omnigent
+COPY --from=omnigent-source /examples /build/examples
 
 
 # ── Native tools builder ─────────────────────────────────
@@ -71,14 +75,18 @@ RUN dnf install -y --nodocs \
         git procps-ng lsof curl unzip bzip2 \
         iproute nftables python3-pip \
         libevent ncurses-libs libcap \
-        nodejs npm \
+        nodejs npm nss_wrapper \
  && dnf clean all
 
 # tmux + bubblewrap binaries from the native-builder stage.
 COPY --from=native-builder /usr/local/bin/tmux /usr/local/bin/tmux
 COPY --from=native-builder /usr/local/bin/bwrap /usr/local/bin/bwrap
+COPY images/omnigent-shell-user /usr/local/bin/omnigent-shell-user
+COPY images/omnigent-user-identity.sh /usr/local/bin/omnigent-user-identity.sh
+RUN chmod 0755 /usr/local/bin/omnigent-shell-user \
+ && chmod 0644 /usr/local/bin/omnigent-user-identity.sh
 
-# Sandbox user — no fixed uid; OpenShell's policy.yaml controls identity.
+# Sandbox account for drivers that honor the image user.
 RUN groupadd -r sandbox \
  && useradd -r -g sandbox -d /sandbox -s /bin/bash sandbox
 
@@ -95,9 +103,9 @@ RUN npm install -g --no-audit --no-fund \
 
 # Antigravity CLI (agy) — pinned per-arch GitHub release + sha256.
 # Keep in sync with deploy/docker/Dockerfile.
-ARG AGY_VERSION=1.1.16
-ARG AGY_SHA256_AMD64=7742953b7835b457e9102f1357a493913657dfd147435584f609d58356ec085a
-ARG AGY_SHA256_ARM64=c71599bb548cf72dfe7a8f6c411b3c7a3623cd4b0f6276bae89c69f769d6c92d
+ARG AGY_VERSION=1.2.14
+ARG AGY_SHA256_AMD64=68cf4d221cb62e0289245439d3d37f599bdc8e0c4e1e3dae03f326463a0c26dc
+ARG AGY_SHA256_ARM64=3b40c3baab245b43a41007c1db64df51f5f162b6059fcc4a4504731f2689d301
 ENV AGY_VERSION=${AGY_VERSION} \
     AGY_SHA256_AMD64=${AGY_SHA256_AMD64} \
     AGY_SHA256_ARM64=${AGY_SHA256_ARM64}
@@ -120,6 +128,11 @@ RUN set -eu; \
       exit 1; \
     fi; \
     echo "agy ${AGY_VERSION} pinned (sha256 verified)"
+
+# Enable Gemini API-key authentication; the key itself is injected at runtime.
+RUN mkdir -p /sandbox/.gemini/antigravity-cli \
+ && printf '{"modelProvider":"gemini","trustedWorkspaces":["/sandbox/workspace"]}\n' \
+      > /sandbox/.gemini/antigravity-cli/settings.json
 
 # GitHub CLI (gh) — pinned per-arch release + sha256.
 # Keep in sync with deploy/docker/Dockerfile.
@@ -144,7 +157,7 @@ RUN set -eu; \
       echo "ERROR: gh reports '${installed:-<unparseable>}', expected '$GH_VERSION'." >&2; exit 1; }; \
     echo "gh ${GH_VERSION} pinned (sha256 verified)"
 
-# Omnigent source from the nightly host image.
+# Omnigent source from the supplied fork checkout.
 COPY --from=omnigent-src /build /build
 
 # Create venv with UBI 10's Python and install omnigent + runtime deps.
@@ -160,9 +173,13 @@ RUN python3 -m venv /sandbox/.venv \
 RUN echo 'export PATH="/sandbox/.venv/bin:${PATH}"' > /etc/profile.d/omnigent-venv.sh
 
 # Shell init for the sandbox user.
-RUN printf 'export PATH="/sandbox/.venv/bin:/usr/local/bin:/usr/bin:/bin"\nexport VIRTUAL_ENV="/sandbox/.venv"\nexport PS1="\\u@\\h:\\w\\$ "\n' \
+RUN printf '. /usr/local/bin/omnigent-user-identity.sh\nexport PATH="/sandbox/.venv/bin:/usr/local/bin:/usr/bin:/bin"\nexport VIRTUAL_ENV="/sandbox/.venv"\nexport PS1="sandbox@\\h:\\w\\$ "\n' \
       > /sandbox/.bashrc \
  && printf '[ -f ~/.bashrc ] && . ~/.bashrc\n' > /sandbox/.profile
+
+# Codex defaults.
+RUN mkdir -p /sandbox/.codex \
+  && printf 'model = "gpt-6-luna"\nmodel_reasoning_effort = "medium"\n' > /sandbox/.codex/config.toml
 
 # OpenShell sandbox policy.
 COPY images/policy.yaml /etc/openshell/policy.yaml

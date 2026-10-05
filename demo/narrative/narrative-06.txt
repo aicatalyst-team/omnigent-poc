@@ -1,5 +1,11 @@
-Omnigent can integrate to an OIDC provider like keycloak, and sessions can be shared.
+But it's not just a chat view that's common across agents.
 
-I'm going to share this session with Alice and Bob.
+It's also interesting to look at these side panel features.
 
-Here in a private window, I'm going to login as Alice and I should be able to see that session and add to it.
+The working folder contains the checked out branch.
+
+The changes view, does not contain any local changes yet.
+
+The git view shows the PR description and we can inspect the already committed changes in this PR.
+
+There's a side chat feature that allows an interaction outside of the main conversation.

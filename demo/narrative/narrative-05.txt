@@ -1,5 +1,5 @@
-So let's look at the details here. We can open a shell in to the sandbox if we want or use the openshell connect command.
+The are a lot of nice features to explore. You can see it has named the session automatically based on the content.
 
-Openshell ensures all network calls and file access are tightly controlled. All web requests are sent through a proxy.
+The current chat view is common across all agents to reduce vendor lock in. We can also switch back and forth to the native text UI of the agent also.
 
-We have to be careful when closing this session though that we don't shut the sandbox down. We use Control P followed by Control Q to detach.
+This is the Codex Text UI.

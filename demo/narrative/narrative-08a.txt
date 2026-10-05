@@ -1,0 +1,11 @@
+While we're waiting for that to start let's have a look at the sharing features.
+
+I'm logging in as Bob on a different browser.
+
+Back in Alice's account let's share the session with Bob.
+
+Over in Bob's account we can now see this under all sessions.
+
+He can see the complete history and collaborate in the conversation.
+
+Bob's prompt can be seen over on Alice's side marked with B, and the output streams to both users.
