@@ -41,6 +41,9 @@ endpoints:
   - { host: oauth2.googleapis.com, port: 443, protocol: rest, access: read-write }
   - { host: play.googleapis.com, port: 443, protocol: rest, access: read-write }
   - { host: antigravity-unleash.goog, port: 443, protocol: rest, access: read-write }
+  - { host: playright.azureedge.net, port: 443, protocol: rest, access: read-write}
+  - { host: playright-verison.azureedge.net, port: 443, protocol: rest, access: read-write}
+  - { host: playright-akamai.azureedge.net, port: 443, protocol: rest, access: read-write}
 binaries:
   - { path: /usr/local/bin/agy }
   - { path: /usr/local/bin/node }

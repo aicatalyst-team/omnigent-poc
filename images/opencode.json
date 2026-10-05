@@ -7,7 +7,7 @@
       "name": "LiteMaaS",
       "options": {
         "baseURL": "http://litemaas-litellm.litemaas.svc.cluster.local:4000/v1",
-        "apiKey": "{env:SELF_HOSTED_API_KEY}"
+        "apiKey": "{env:LITEMAAS_API_KEY}"
       },
       "models": {
         "gemma-4": {

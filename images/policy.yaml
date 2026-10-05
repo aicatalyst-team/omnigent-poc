@@ -53,6 +53,13 @@ network_policies:
       - { path: /usr/local/bin/opencode }
       - { path: /usr/bin/curl }
 
+  codex:
+    name: codex
+    endpoints:
+    - { host: raw.githubusercontent.com, port: 443}
+    binaries:
+      - { path: /usr/local/bin/codex }
+
   omnigent_server:
     name: omnigent-server
     endpoints:

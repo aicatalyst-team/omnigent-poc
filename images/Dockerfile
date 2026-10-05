@@ -103,9 +103,9 @@ RUN npm install -g --no-audit --no-fund \
 
 # Antigravity CLI (agy) — pinned per-arch GitHub release + sha256.
 # Keep in sync with deploy/docker/Dockerfile.
-ARG AGY_VERSION=1.1.16
-ARG AGY_SHA256_AMD64=7742953b7835b457e9102f1357a493913657dfd147435584f609d58356ec085a
-ARG AGY_SHA256_ARM64=c71599bb548cf72dfe7a8f6c411b3c7a3623cd4b0f6276bae89c69f769d6c92d
+ARG AGY_VERSION=1.2.14
+ARG AGY_SHA256_AMD64=68cf4d221cb62e0289245439d3d37f599bdc8e0c4e1e3dae03f326463a0c26dc
+ARG AGY_SHA256_ARM64=3b40c3baab245b43a41007c1db64df51f5f162b6059fcc4a4504731f2689d301
 ENV AGY_VERSION=${AGY_VERSION} \
     AGY_SHA256_AMD64=${AGY_SHA256_AMD64} \
     AGY_SHA256_ARM64=${AGY_SHA256_ARM64}
@@ -128,6 +128,11 @@ RUN set -eu; \
       exit 1; \
     fi; \
     echo "agy ${AGY_VERSION} pinned (sha256 verified)"
+
+# Enable Gemini API-key authentication; the key itself is injected at runtime.
+RUN mkdir -p /sandbox/.gemini/antigravity-cli \
+ && printf '{"modelProvider":"gemini","trustedWorkspaces":["/sandbox/workspace"]}\n' \
+      > /sandbox/.gemini/antigravity-cli/settings.json
 
 # GitHub CLI (gh) — pinned per-arch release + sha256.
 # Keep in sync with deploy/docker/Dockerfile.
