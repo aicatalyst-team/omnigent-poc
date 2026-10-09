@@ -1,0 +1,15 @@
+So let's look in to the details of the Openshell perspective on OpenShift.
+
+I have previously installed OpenShell through its Helm chart on to Openshift.
+
+A new pod is created using an Openshell compliant image, and a supervisor pod sits alongside it monitoring its status.
+
+I can connect through this gateway using the OpenShell command in terminal mode to see what's going on.
+
+We have a specific Omnigent workspace inside OpenShell to keep entities isolated from the default workspace.
+
+We can see the Gateway I'm connecting through, the Providers and Sandboxes once we set in to the correct workspace.
+
+It's interesting to inspect the policy that this sandbox runs with. It comprises of a base policy that I baked in to the Dockerfile, plus some providers that I have configured globally. There is one each for codex, github, gemini and opencode access. Each of these providers is created from a profile plus private credentials.
+
+The benfit of this approach is it make the policy more manageable and allows Openshell to hide the credentials.

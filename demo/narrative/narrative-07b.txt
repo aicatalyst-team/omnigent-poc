@@ -1,0 +1,5 @@
+It's interesting to look at the credentials we have passed in through the providers. The open AI API key is masked with a value that will be replaced by Openshell as it calls the endpoint.
+
+It's the same with GH token credential. The GH command makes the call and the credential is replaced before it's sent out to the endpoint.
+
+Going back to the session, the read-me has been updated now and we can see the changes in this view.

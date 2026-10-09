@@ -1,10 +1,10 @@
-While we're waiting for that to start let's have a look at the sharing features.
+While we're waiting for that to start, let's have a look at the sharing features of OmniGent.
+
+Here in Alice's account let's share the session with Bob. We give him full access.
 
 I'm logging in as Bob on a different browser.
 
-Back in Alice's account let's share the session with Bob.
-
-Over in Bob's account we can now see this under all sessions.
+In Bob's account we can now see this under all sessions.
 
 He can see the complete history and collaborate in the conversation.
 

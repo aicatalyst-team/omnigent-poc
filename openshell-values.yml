@@ -1,0 +1,30 @@
+USER-SUPPLIED VALUES:
+networkPolicy:
+  enabled: false
+pkiInitJob:
+  enabled: false
+podSecurityContext:
+  fsGroup: 0
+replicaCount: 1
+securityContext:
+  capabilities:
+    drop: []
+  runAsNonRoot: false
+  runAsUser: 0
+server:
+  auth:
+    allowUnauthenticatedUsers: true
+  defaultRuntimeClassName: ""
+  disableTls: true
+  drivers:
+    kubernetes:
+      allowDriverConfig: true
+  forceInitContainerSideload: true
+  logLevel: info
+  sandboxImage: quay.io/aicatalyst/omnigent-host-openshell:v0.1.19
+  sandboxImagePullPolicy: Always
+  sandboxNamespace: ""
+service:
+  type: ClusterIP
+supervisor:
+  sideloadMethod: init-container

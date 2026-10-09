@@ -1,1 +1,13 @@
-Going back to the session, the read-me has been updated now and we can see the changes in this view.
+To demonstrate the policy features, in the shell we use curl to call the redhat URL and we can see it's denied by default, since it is not named in any policy or provider.
+
+Over in the openshell terminal we can see the status and any policy violations. 
+
+Here we see there are 3 violations pending review.
+
+We press R to Review and inspect the violation.
+
+We can see the URL and from what program it's being called. We can approve it here without restarting the sandbox. A new version of the policy is generated and applied.
+
+We approve the other 2 also, which are related to gh command accessing some new endpoint.
+
+After this, accessing the Red Hat website works normally.
