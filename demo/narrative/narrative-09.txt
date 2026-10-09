@@ -1,7 +1,0 @@
-Going back to the opencode session for a minute shows us the result is present.
-
-We can jump over to the terminal view and see this is native opencode text ui.
-
-We can change the model here and choose between one of the 4 self hosted models that are hosted through Lite Mass.
-
-Finally when we are finished with this session, we can delete it and it will delete the underlying sandbox.

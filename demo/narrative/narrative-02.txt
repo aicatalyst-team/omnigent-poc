@@ -1,5 +1,5 @@
-In this demo we dive in to this server mode and see how it can fit in to Red Hat OpenShift AI's policy of Bring Your Own Agents on top of Nvidia OpenShell.
+In this demo we dive in to this server mode and show how it fits in neatly to Red Hat OpenShift AI's policy of Bring Your Own Agents on top of Nvidia OpenShell.
 
-OpenShell will be part of Red Hat AI from release 3.6 onwards as its secure sandbox solution.
+OpenShell will be part of Red Hat AI from release 3.6 onwards as its secure sandbox solution, and provides granular network, container and credential management especially suited to agentic harnesses.
 
-We'll show how this Omni Gent server mode allows collaboration between teams and how it can give a new way of working with agents.
+In itself Openshell is harness agnostic, and the integration with Omnigent here shows its flexibility and strengths in providing a secure code execution environment. The way the Omnigent server controls OpenShell through its SDK can be taken as a reference for how to integrate it with your own harnesses.

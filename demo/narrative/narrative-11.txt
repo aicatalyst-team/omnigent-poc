@@ -1,9 +1,9 @@
-Omni Gent has lots of new features being added all the time.
+Omni Gent has lots of new features being added all the time, especially when it comes to Team Agents.
 
-The take aways are it provides a very capable layer over a multitude of proprietary Agent harnesses that can make it easier to switch between them.
+The take aways are it provides a very capable, vendor agnostic layer over a multitude of proprietary Agent harnesses that can make it easier to switch between them.
 
-The collaborative features enable a whole new way of working that fit somewhere between the individual pair programming approach and the totally hands off Software Factory approach.
+OpenShell on OpenShift provides a powerful and secure environment for it all to run safely, and has many more features we did not even touch.
 
-Thanks for watching and I hope you're encouraged to try out Omni Gent for your self soon, either in server mode like this or locally for personal use.
+Thanks for watching and I hope you're encouraged to try out Omni Gent and OpenShell for your self soon, either in server mode like this or locally for personal use.
 
 Stay tuned for more demoes in this area.

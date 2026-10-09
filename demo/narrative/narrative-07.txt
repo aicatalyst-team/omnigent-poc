@@ -1,7 +1,3 @@
-Omni Gent also allows us to open a shell in to the sandbox.
+You can see in the terminal it's an Openshell environment based on UBI and in this case on the OpenShift kernel.
 
-I can check I'm authenticated to Git Hub, since I passed in a token as an environment variable.
-
-You can see here it's an Openshell environment based on UBI 10.
-
-All the usual shell command work, including control D to close it.
+Inside Kubernetes, OpenShell containers are provisioned by the Agent Sandbox controller, which is a powerful layer that allows you choose between alternate Runtime Classes, like Run C for standard containers or Kata containers for additional security through kernel isolation.

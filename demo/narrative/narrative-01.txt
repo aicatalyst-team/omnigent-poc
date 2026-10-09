@@ -4,9 +4,7 @@ It can be described as a meta-harness for AI agents. It originated from Databric
 
 It acts as a common layer over Claude Code, Codex, Pi, and the agents you write yourself, avoiding the vendor lock-in of the harnesses from the big labs.
 
-You can swap or combine harnesses without rewriting, keep them in check with policies and sandboxing, and collaborate in real time on the same live session, from any device.
-
-You might think - I can do all of that with OpenCode already. What's new here? 
+You might ask: how is different from OpenCode? What's new here? 
 
 The difference is that Omni Gent runs the actual harness in the background, so you still get access to all of its functionality and special commands.
 

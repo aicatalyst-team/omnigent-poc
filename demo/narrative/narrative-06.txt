@@ -9,3 +9,7 @@ The changes view, does not contain any local changes yet.
 The git view shows the PR description and we can inspect the already committed changes in this PR.
 
 There's a side chat feature that allows an interaction outside of the main conversation.
+
+Omni Gent also allows us to open a shell in to the sandbox.
+
+We'll look at that right after I've prompted the main chat again.

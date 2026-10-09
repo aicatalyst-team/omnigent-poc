@@ -1,5 +1,5 @@
-The are a lot of nice features to explore. You can see it has named the session automatically based on the content.
+Over in Omnigent we can see the sandbox has started and the result starts to stream in from the Codex agent.
 
-The current chat view is common across all agents to reduce vendor lock in. We can also switch back and forth to the native text UI of the agent also.
+The current chat view is common across all agent harnesses, to reduce vendor lock in.
 
-This is the Codex Text UI.
+Behind this the real codex is running and we can switch to its text UI and we can access it directly, and switch back and forth seamlessly.
