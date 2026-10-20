@@ -1,4 +1,4 @@
-# Install openshell locally
+# Install OpenShell locally
 
 ## Installing OpenShell on Kind
 
@@ -58,4 +58,4 @@ openshell provider create --name my-codex --type openai --credential OPENAI_API_
 openshell provider list --workspace omnigent
 ```
 
-> The providers can then be added to Omnigent's `server-config.yaml` so that they will be attached to new sandboxes.
+> The providers need to be added to or updated in Omnigent's `server-config.yaml` so that they will be attached to new sandboxes. See **Server Configuration** section in [README](../README.md).

@@ -26,7 +26,7 @@ This is pushed to `quay.io/aicatalyst/omnigent-host-openshell`.
 
 ## Deployment
 
-API tokens are expected to be passed in through OpenShell providers. See [OPENSHELL.md](docs/OPENSHELL.md).
+> OpenShell needs to be deployed first, with profiles and providers configured. See [OPENSHELL.md](./docs/OPENSHELL.md).
 
 Please deploy on OpenShift with the accompanying Kustomize at the `scShiftShell` branch of the `https://github.com/aicatalyst-team/omnigent` fork:
 
@@ -36,9 +36,9 @@ with `kubectl apply -k deploy/kubernetes/overlays/openshift-openshell/`.
 
 The Kustomize deploys:
 
-* `quay.io/aicatalyst/omnigent-host-openshell` (from above) as the sandbox container
+* `quay.io/aicatalyst/omnigent-host-openshell:latest` (from above) as the sandbox container
   * referenced in `server-confg.yaml`
-* `quay.io/aicatalyst/omnigent-server-openshell` (see below) as the omnigent runtime
+* `quay.io/aicatalyst/omnigent-server-openshell:latest` (see below) as the omnigent runtime
   * referenced in `deployment.yaml`
 
 
@@ -64,6 +64,6 @@ The branch [scOpenshellProviders](https://github.com/aicatalyst-team/omnigent/tr
 * runtime selection
 * list of providers
 
-This builds `quay.io/aicatalyst/omnigent-server-openshell` and is referenced by the Kustomize above.
+This builds `quay.io/aicatalyst/omnigent-server-openshell:latest` and is referenced by the Kustomize above.
 
-> These will be pushed upstream as a PR when finished.
+> These changes will be pushed upstream as a PR when finished.
